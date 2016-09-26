@@ -1,0 +1,15 @@
+# vi swp
+.*.swp
+
+# IntelliJ
+*.idea
+*.iml
+*.ipr
+*.iws
+*~
+
+# Mac stuff
+.DS_Store
+
+out/**
+out
