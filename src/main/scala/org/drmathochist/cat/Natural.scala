@@ -1,6 +1,10 @@
 package org.drmathochist.cat
 
 object Natural {
+  def id[F[_]: Functor] = new (F ~> F) {
+    def t[A]: F[A] => F[A] = identity
+  }
+
   // an example of a natural transformation
   object HeadOption extends (List ~> Option) {
     def t[A]: List[A] => Option[A] = (fa: List[A]) => fa.headOption

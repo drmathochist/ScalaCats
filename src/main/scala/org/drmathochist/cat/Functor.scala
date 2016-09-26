@@ -2,10 +2,10 @@ package org.drmathochist.cat
 
 object Functor {
   // adds a map method to any instance of a functor value
-  class Ops[F[_], A](val self: F[A])(implicit F: Functor[F]) extends org.drmathochist.Ops[F[A]] {
-    def map[B](f: A => B): F[B] = F.fmap(f)(self)
+  class Ops[F[_]: Functor, A](val self: F[A]) extends org.drmathochist.Ops[F[A]] {
+    def map[B](f: A => B): F[B] = implicitly[Functor[F]].fmap(f)(self)
   }
-  implicit def toFunctorOps[F[_], A](fa: F[A])(implicit F: Functor[F]) = new Ops(fa)
+  implicit def toFunctorOps[F[_]: Functor, A](fa: F[A]) = new Ops(fa)
 
   // some examples of functors
   // also useful as typeclass evidence objects
