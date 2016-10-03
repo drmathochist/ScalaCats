@@ -1,4 +1,6 @@
-package org.drmathochist.cat
+package org.drmathochist.cat.functor
+
+import org.drmathochist.cat._
 
 object Natural {
   def id[F[_]: Functor] = new (F ~> F) {

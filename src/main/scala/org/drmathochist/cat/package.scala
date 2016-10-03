@@ -1,7 +1,7 @@
 package org.drmathochist
 
 package object cat {
-  type ~>[F[_], G[_]] = Natural[F, G]
+  type Coalgebra[W[_], S] = S => W[S]
 
-  type ≈>[Phi[F[_]], Psi[F[_]]] = HNatural[Phi, Psi]
+  type IxCoalgebra[W[_, _, _], S, T, A, B] = S => W[A, B, T]
 }
