@@ -5,7 +5,11 @@ import org.drmathochist.cat.Coalgebra
 import org.drmathochist.cat.functor._
 import org.drmathochist.lens.Store.StoreIsFunctor
 
-// following along with https://bartoszmilewski.com/2015/07/13/from-lenses-to-yoneda-embedding/
+/**
+ * Some scratch work following along with indexed coalgebras and lenses
+ *
+ * https://bartoszmilewski.com/2015/07/13/from-lenses-to-yoneda-embedding/
+ */
 object Scratch {
   // this says that a Lens is a coalgebra for the functor Store[A, _]
   type Lens[A, S] = Coalgebra[({type St[X]=Store[A, X]})#St, S]

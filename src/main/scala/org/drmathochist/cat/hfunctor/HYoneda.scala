@@ -4,6 +4,13 @@ import HFunctor._
 import org.drmathochist.cat.functor.{~>, Natural, Functor}
 
 object HYoneda {
+  /**
+   * Defines some shorthand: RepHNat[Phi[_], F] is the type of a natural transformation
+   * which goes from the HFunctor F ~> _ "represented by F" to the functor Phi[_].
+   *
+   * @tparam Phi
+   * @tparam F
+   */
   type RepHNat[Phi[_[_]], F[_]] = ({type Nat[G[_]] = F~>G})#Nat ≈> Phi
 }
 
@@ -14,6 +21,8 @@ import HYoneda.RepHNat
  *
  * * (higher) natural transformations F~>_ ≈> Phi[_]
  * * elements                         Phi[F]
+ *
+ * All of this is exactly as in the class Yoneda, but with the category of natural transformations on the input side.
  *
  * @tparam F    a (simple) functor
  * @tparam Phi  a higher-order functor
