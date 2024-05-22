@@ -6,7 +6,7 @@ The second is functors from functors to types.
 In this case, the arrows between functors are defined to be natural transformations.
 And natural transformations are also the subject matter of the first case of the Yoneda lemma.
 
-As a functional language, Scala already reifies functions as objects, which makes it easy to talk about these arrowe between types.
+As a functional language, Scala already reifies functions as objects, which makes it easy to talk about these arrows between types.
 Natural transformations, however, are trickier.
 They show up easily enough: a natural transformation from one functor to another is just a parametrically polymorphic function!
 But reifying this object takes a little more work, similar to the way that reifying functions takes work in languages that don't support first-class function values.
